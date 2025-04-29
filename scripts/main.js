@@ -29,8 +29,6 @@ const themeIcon = document.getElementById('theme-icon');
 // Elementos do Dashboard
 const welcomeName = document.getElementById('welcome-name');
 const welcomeRent = document.getElementById('welcome-rent');
-const residentName = document.getElementById('resident-name');
-const residentAddress = document.getElementById('resident-address');
 const condominiumStatus = document.getElementById('condominium-status');
 const rentStatus = document.getElementById('rent-status');
 const condominiumPaymentStatus = document.getElementById('condominium-payment-status');
@@ -101,10 +99,6 @@ function updateDashboard(userData) {
     // Atualizar banner de boas-vindas
     welcomeName.textContent = `Bem-vindo(a), ${userData.nome.split(' ')[0]}!`;
     welcomeRent.textContent = `Aluguel: R$ ${RENT_VALUE.toFixed(2).replace('.', ',')}`;
-    
-    // Atualizar informações do morador
-    residentName.querySelector('.value').textContent = userData.nome;
-    residentAddress.querySelector('.value').textContent = userData.endereco;
     
     // Atualizar status de pagamentos
     updatePaymentStatus(condominiumStatus, userData.pendencia_condominio);

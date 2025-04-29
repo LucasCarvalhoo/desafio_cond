@@ -58,9 +58,15 @@ body {
     padding: 20px;
 }
 
-h1, h2, h3 {
+h1, h2, h3, h4 {
     margin-bottom: 15px;
     color: var(--primary-dark);
+}
+
+h4 {
+    font-size: 1rem;
+    margin-bottom: 10px;
+    margin-top: 15px;
 }
 
 /* Telas */
@@ -296,15 +302,17 @@ h1, h2, h3 {
     color: var(--warning-color);
 }
 
-.discount-info {
-    background-color: var(--card-bg);
-    border: 2px dashed var(--primary-color);
+.discount-section {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px dashed var(--border-color);
 }
 
-#discount-text {
+.discount-value {
     font-size: 1.1rem;
     font-weight: 500;
     color: var(--primary-dark);
+    padding: 5px 0;
 }
 
 /* Responsividade */
