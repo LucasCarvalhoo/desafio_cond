@@ -1,35 +1,35 @@
 /* Variáveis CSS - Tema Claro */
 :root {
-    --background: #f5f7fa;
-    --foreground: #333;
-    --primary-color: #3a6ea5;
-    --primary-dark: #2c5282;
-    --secondary-color: #f0f4f8;
+    --background: #f8fafc;
+    --foreground: #334155;
+    --primary-color: #3b82f6;
+    --primary-dark: #2563eb;
+    --secondary-color: #f1f5f9;
     --card-bg: #ffffff;
-    --light-text: #666;
-    --success-color: #48bb78;
-    --warning-color: #ed8936;
-    --danger-color: #e53e3e;
+    --light-text: #64748b;
+    --success-color: #22c55e;
+    --warning-color: #f59e0b;
+    --danger-color: #ef4444;
     --border-color: #e2e8f0;
-    --border-radius: 8px;
-    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    --transition: all 0.3s ease;
+    --border-radius: 10px;
+    --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Variáveis CSS - Tema Escuro */
 .dark {
-    --background: #1a202c;
-    --foreground: #e2e8f0;
-    --primary-color: #4a7eb5;
-    --primary-dark: #5a92c5;
-    --secondary-color: #2d3748;
-    --card-bg: #2d3748;
-    --light-text: #a0aec0;
-    --success-color: #68d391;
-    --warning-color: #f6ad55;
-    --danger-color: #fc8181;
-    --border-color: #4a5568;
-    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    --background: #0f172a;
+    --foreground: #f8fafc;
+    --primary-color: #60a5fa;
+    --primary-dark: #3b82f6;
+    --secondary-color: #1e293b;
+    --card-bg: #1e293b;
+    --light-text: #94a3b8;
+    --success-color: #4ade80;
+    --warning-color: #fbbf24;
+    --danger-color: #f87171;
+    --border-color: #334155;
+    --box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.3), 0 4px 6px -2px rgba(0, 0, 0, 0.2);
 }
 
 /* Reset e Estilos Básicos */
@@ -41,15 +41,16 @@
 
 html, body {
     height: 100%;
+    scroll-behavior: smooth;
 }
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Segoe UI', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
     line-height: 1.6;
     color: var(--foreground);
     background-color: var(--background);
     min-height: 100vh;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    transition: background-color 0.5s ease, color 0.5s ease;
 }
 
 .container {
@@ -61,6 +62,7 @@ body {
 h1, h2, h3, h4 {
     margin-bottom: 15px;
     color: var(--primary-dark);
+    transition: color 0.3s ease;
 }
 
 h4 {
@@ -77,7 +79,20 @@ h4 {
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     padding: 30px;
-    transition: background-color 0.3s ease;
+    transition: all 0.4s ease;
+    transform: translateY(0);
+    animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .logo-container {
@@ -89,6 +104,11 @@ h4 {
     width: 80px;
     height: 80px;
     margin-bottom: 15px;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: scale(1.05);
 }
 
 .login-container h1 {
@@ -111,23 +131,26 @@ h4 {
     display: block;
     margin-bottom: 5px;
     font-weight: 500;
+    transition: color 0.2s ease;
 }
 
 .input-group input {
     width: 100%;
-    padding: 12px;
-    border: 1px solid var(--border-color);
+    padding: 12px 15px;
+    border: 2px solid var(--border-color);
     border-radius: var(--border-radius);
     font-size: 16px;
     transition: var(--transition);
     background-color: var(--secondary-color);
     color: var(--foreground);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
 .input-group input:focus {
     outline: none;
     border-color: var(--primary-color);
-    box-shadow: 0 0 0 2px rgba(74, 126, 181, 0.2);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.25);
+    transform: translateY(-2px);
 }
 
 .toggle-password {
@@ -139,16 +162,37 @@ h4 {
     cursor: pointer;
     font-size: 18px;
     color: var(--light-text);
+    transition: color 0.2s ease;
+}
+
+.toggle-password:hover {
+    color: var(--primary-color);
 }
 
 .error-message {
-    background-color: rgba(229, 62, 62, 0.1);
+    background-color: rgba(239, 68, 68, 0.1);
     color: var(--danger-color);
-    padding: 10px;
+    padding: 12px;
     border-radius: var(--border-radius);
     margin-bottom: 15px;
     font-size: 14px;
     text-align: center;
+    animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+    30%, 50%, 70% {
+        transform: translate3d(-3px, 0, 0);
+    }
+    40%, 60% {
+        transform: translate3d(3px, 0, 0);
+    }
 }
 
 .hidden {
@@ -157,7 +201,7 @@ h4 {
 
 .primary-button {
     width: 100%;
-    padding: 12px;
+    padding: 14px;
     background-color: var(--primary-color);
     color: white;
     border: none;
@@ -170,10 +214,40 @@ h4 {
     justify-content: center;
     align-items: center;
     gap: 8px;
+    position: relative;
+    overflow: hidden;
 }
 
 .primary-button:hover {
     background-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+}
+
+.primary-button:active {
+    transform: translateY(0);
+}
+
+.primary-button::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform 0.4s, opacity 0.8s;
+}
+
+.primary-button:active::after {
+    transform: scale(0, 0);
+    opacity: 0.3;
+    transition: 0s;
 }
 
 .button-icon {
@@ -197,10 +271,26 @@ h4 {
 .forgot-password {
     color: var(--primary-color);
     text-decoration: none;
+    transition: var(--transition);
+    position: relative;
 }
 
-.forgot-password:hover {
-    text-decoration: underline;
+.forgot-password::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--primary-color);
+    transform: scaleX(0);
+    transform-origin: bottom right;
+    transition: transform 0.3s ease-out;
+}
+
+.forgot-password:hover::after {
+    transform: scaleX(1);
+    transform-origin: bottom left;
 }
 
 .login-footer {
@@ -217,7 +307,19 @@ h4 {
     border-radius: var(--border-radius);
     box-shadow: var(--box-shadow);
     padding: 15px 20px;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
+    animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .header-content {
@@ -235,6 +337,11 @@ h4 {
 .header-logo {
     width: 40px;
     height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.header-logo:hover {
+    transform: rotate(5deg) scale(1.1);
 }
 
 .header-actions {
@@ -258,11 +365,35 @@ h4 {
     width: 40px;
     height: 40px;
     position: relative;
+    overflow: hidden;
 }
 
 .icon-button:hover {
     background-color: var(--primary-color);
     color: white;
+    transform: translateY(-2px);
+}
+
+.icon-button::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background-image: radial-gradient(circle, rgba(255, 255, 255, 0.3) 10%, transparent 10.01%);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    transform: scale(10, 10);
+    opacity: 0;
+    transition: transform 0.4s, opacity 0.8s;
+}
+
+.icon-button:active::after {
+    transform: scale(0, 0);
+    opacity: 0.3;
+    transition: 0s;
 }
 
 .notification-badge {
@@ -272,19 +403,35 @@ h4 {
     background-color: var(--danger-color);
     color: white;
     border-radius: 50%;
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     font-size: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 0.3s ease;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(239, 68, 68, 0.7);
+    }
+    70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 0 5px rgba(239, 68, 68, 0);
+    }
+    100% {
+        transform: scale(1);
+    }
 }
 
 .secondary-button {
     padding: 10px 16px;
     background-color: var(--secondary-color);
     color: var(--primary-dark);
-    border: 1px solid var(--primary-color);
+    border: 2px solid var(--primary-color);
     border-radius: var(--border-radius);
     font-size: 14px;
     font-weight: 600;
@@ -298,11 +445,17 @@ h4 {
 .secondary-button:hover {
     background-color: var(--primary-color);
     color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(37, 99, 235, 0.2);
+}
+
+.secondary-button:active {
+    transform: translateY(0);
 }
 
 /* Welcome Banner */
 .welcome-banner {
-    background-color: var(--primary-color);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--primary-dark) 100%);
     color: white;
     border-radius: var(--border-radius);
     padding: 25px;
@@ -311,6 +464,13 @@ h4 {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    animation: fadeIn 0.6s ease-out 0.2s both;
+}
+
+.welcome-banner:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
 }
 
 .welcome-text h2 {
@@ -332,8 +492,8 @@ h4 {
 }
 
 .profile-avatar {
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     background-color: rgba(255, 255, 255, 0.2);
     border-radius: 50%;
     display: flex;
@@ -341,6 +501,13 @@ h4 {
     justify-content: center;
     font-size: 24px;
     font-weight: bold;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-avatar:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 }
 
 #account-since {
@@ -351,6 +518,7 @@ h4 {
 /* Info Sections */
 .info-section {
     margin-bottom: 30px;
+    animation: fadeIn 0.6s ease-out 0.4s both;
 }
 
 .section-title {
@@ -358,6 +526,23 @@ h4 {
     font-size: 1.5rem;
     border-left: 4px solid var(--primary-color);
     padding-left: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 15px;
+    width: 50px;
+    height: 2px;
+    background-color: var(--primary-color);
+    transition: width 0.3s ease;
+}
+
+.section-title:hover::after {
+    width: 100px;
 }
 
 .info-row {
@@ -373,9 +558,16 @@ h4 {
     box-shadow: var(--box-shadow);
     padding: 25px;
     margin-bottom: 20px;
-    transition: background-color 0.3s ease;
+    transition: all 0.3s ease;
     flex: 1;
     min-width: 300px;
+    border-top: 4px solid transparent;
+}
+
+.info-block:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-top: 4px solid var(--primary-color);
 }
 
 .info-block h3 {
@@ -383,6 +575,11 @@ h4 {
     margin-bottom: 15px;
     padding-bottom: 10px;
     border-bottom: 1px solid var(--border-color);
+    transition: color 0.3s ease;
+}
+
+.info-block:hover h3 {
+    color: var(--primary-color);
 }
 
 .info-content {
@@ -396,6 +593,11 @@ h4 {
     justify-content: space-between;
     align-items: center;
     padding: 5px 0;
+    transition: transform 0.2s ease;
+}
+
+.info-item:hover, .status-item:hover {
+    transform: translateX(5px);
 }
 
 .label {
@@ -411,22 +613,41 @@ h4 {
     border-radius: 20px;
     font-size: 14px;
     font-weight: 600;
+    transition: all 0.3s ease;
 }
 
 .status-badge.paid {
-    background-color: rgba(72, 187, 120, 0.2);
+    background-color: rgba(34, 197, 94, 0.2);
     color: var(--success-color);
 }
 
+.status-badge.paid:hover {
+    background-color: rgba(34, 197, 94, 0.3);
+    transform: scale(1.05);
+}
+
 .status-badge.pending {
-    background-color: rgba(237, 137, 54, 0.2);
+    background-color: rgba(245, 158, 11, 0.2);
     color: var(--warning-color);
+}
+
+.status-badge.pending:hover {
+    background-color: rgba(245, 158, 11, 0.3);
+    transform: scale(1.05);
 }
 
 .discount-section {
     margin-top: 20px;
     padding-top: 15px;
     border-top: 1px dashed var(--border-color);
+    transition: background-color 0.3s ease;
+}
+
+.discount-section:hover {
+    background-color: rgba(59, 130, 246, 0.05);
+    border-radius: var(--border-radius);
+    padding: 15px;
+    margin-top: 5px;
 }
 
 .discount-value {
@@ -434,6 +655,11 @@ h4 {
     font-weight: 500;
     color: var(--primary-dark);
     padding: 8px 0;
+    transition: color 0.3s ease;
+}
+
+.discount-section:hover .discount-value {
+    color: var(--primary-color);
 }
 
 .action-buttons {
