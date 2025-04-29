@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciamento de Condomínio</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Tela de Login -->
+        <div id="login-screen" class="screen active">
+            <div class="login-container">
+                <h1>Condomínio Residencial</h1>
+                <div class="login-form">
+                    <h2>Acesso ao Sistema</h2>
+                    <div class="input-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" placeholder="seu@email.com">
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" placeholder="••••••••">
+                    </div>
+                    <button id="login-button" class="primary-button">Entrar</button>
+                    <p class="help-text">Este é um sistema demonstrativo. Clique em "Entrar" para visualizar o dashboard.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dashboard -->
+        <div id="dashboard-screen" class="screen">
+            <header class="dashboard-header">
+                <div class="header-content">
+                    <h1>Painel do Morador</h1>
+                    <div class="header-actions">
+                        <button id="theme-toggle" class="icon-button">
+                            <span id="theme-icon">🌙</span>
+                        </button>
+                        <button id="logout-button" class="secondary-button">Sair</button>
+                    </div>
+                </div>
+            </header>
+            
+            <div class="welcome-banner">
+                <div class="welcome-text">
+                    <h2 id="welcome-name">Bem-vindo(a), ...</h2>
+                    <p id="welcome-rent">Aluguel: R$ 0,00</p>
+                </div>
+            </div>
+            
+            <section class="info-section">
+                <h2 class="section-title">Cartões de informações:</h2>
+                
+                <div class="info-row">
+                    <div class="info-block financial-status">
+                        <h3>Situação Financeira</h3>
+                        <div class="info-content">
+                            <div id="rent-status" class="status-item">
+                                <span class="label">Aluguel:</span>
+                                <span class="status-badge">Carregando...</span>
+                            </div>
+                            <div id="condominium-status" class="status-item">
+                                <span class="label">Condomínio:</span>
+                                <span class="status-badge">Carregando...</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="info-block condominium-info">
+                        <h3>Condomínio</h3>
+                        <div class="info-content">
+                            <div id="condominium-payment-status" class="status-item">
+                                <span class="label">Status:</span>
+                                <span class="status-badge">Carregando...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-block discount-info">
+                    <h3>Desconto Aplicado</h3>
+                    <div class="info-content">
+                        <p id="discount-text">Carregando informações de desconto...</p>
+                    </div>
+                </div>
+                
+                <div class="info-block resident-details">
+                    <h3>Detalhes do Morador</h3>
+                    <div class="info-content">
+                        <div id="resident-name" class="info-item">
+                            <span class="label">Nome:</span>
+                            <span class="value">Carregando...</span>
+                        </div>
+                        <div id="resident-address" class="info-item">
+                            <span class="label">Endereço:</span>
+                            <span class="value">Carregando...</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script src="scripts/main.js"></script>
+</body>
+</html>

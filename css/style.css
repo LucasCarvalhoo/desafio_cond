@@ -1,0 +1,341 @@
+/* Variáveis CSS - Tema Claro */
+:root {
+    --background: #f5f7fa;
+    --foreground: #333;
+    --primary-color: #3a6ea5;
+    --primary-dark: #2c5282;
+    --secondary-color: #f0f4f8;
+    --card-bg: #ffffff;
+    --light-text: #666;
+    --success-color: #48bb78;
+    --warning-color: #ed8936;
+    --danger-color: #e53e3e;
+    --border-color: #e2e8f0;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+/* Variáveis CSS - Tema Escuro */
+.dark {
+    --background: #1a202c;
+    --foreground: #e2e8f0;
+    --primary-color: #4a7eb5;
+    --primary-dark: #5a92c5;
+    --secondary-color: #2d3748;
+    --card-bg: #2d3748;
+    --light-text: #a0aec0;
+    --success-color: #68d391;
+    --warning-color: #f6ad55;
+    --danger-color: #fc8181;
+    --border-color: #4a5568;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Reset e Estilos Básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: var(--foreground);
+    background-color: var(--background);
+    min-height: 100vh;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+h1, h2, h3 {
+    margin-bottom: 15px;
+    color: var(--primary-dark);
+}
+
+/* Telas */
+.screen {
+    display: none;
+}
+
+.screen.active {
+    display: block;
+}
+
+/* Tela de Login */
+.login-container {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 30px;
+    transition: background-color 0.3s ease;
+}
+
+.login-container h1 {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.input-group {
+    margin-bottom: 20px;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    transition: var(--transition);
+    background-color: var(--secondary-color);
+    color: var(--foreground);
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 2px rgba(74, 126, 181, 0.2);
+}
+
+.primary-button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.primary-button:hover {
+    background-color: var(--primary-dark);
+}
+
+.help-text {
+    margin-top: 15px;
+    font-size: 14px;
+    color: var(--light-text);
+    text-align: center;
+}
+
+/* Dashboard */
+.dashboard-header {
+    margin-bottom: 20px;
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 15px 20px;
+    transition: background-color 0.3s ease;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: var(--transition);
+    background-color: var(--secondary-color);
+    width: 36px;
+    height: 36px;
+}
+
+.icon-button:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.secondary-button {
+    padding: 8px 16px;
+    background-color: var(--secondary-color);
+    color: var(--primary-dark);
+    border: 1px solid var(--primary-color);
+    border-radius: var(--border-radius);
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.secondary-button:hover {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+/* Welcome Banner */
+.welcome-banner {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: var(--border-radius);
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: var(--box-shadow);
+}
+
+.welcome-text h2 {
+    color: white;
+    margin-bottom: 5px;
+}
+
+.welcome-text p {
+    font-size: 1.2rem;
+    opacity: 0.9;
+}
+
+/* Info Sections */
+.info-section {
+    margin-bottom: 30px;
+}
+
+.section-title {
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.info-row {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.info-block {
+    background-color: var(--card-bg);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 20px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+    flex: 1;
+    min-width: 300px;
+}
+
+.info-block h3 {
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.info-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.info-item, .status-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.label {
+    font-weight: 500;
+}
+
+.value {
+    color: var(--light-text);
+}
+
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.status-badge.paid {
+    background-color: rgba(72, 187, 120, 0.2);
+    color: var(--success-color);
+}
+
+.status-badge.pending {
+    background-color: rgba(237, 137, 54, 0.2);
+    color: var(--warning-color);
+}
+
+.discount-info {
+    background-color: var(--card-bg);
+    border: 2px dashed var(--primary-color);
+}
+
+#discount-text {
+    font-size: 1.1rem;
+    font-weight: 500;
+    color: var(--primary-dark);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+    .info-row {
+        flex-direction: column;
+    }
+    
+    .info-block {
+        width: 100%;
+    }
+    
+    .header-content {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+    
+    .header-actions {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 10px;
+    }
+    
+    .login-container {
+        padding: 20px;
+        margin: 20px auto;
+    }
+}
