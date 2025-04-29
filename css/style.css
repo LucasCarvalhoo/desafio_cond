@@ -530,20 +530,6 @@ h4 {
     overflow: hidden;
 }
 
-.section-title::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 15px;
-    width: 50px;
-    height: 2px;
-    background-color: var(--primary-color);
-    transition: width 0.3s ease;
-}
-
-.section-title:hover::after {
-    width: 100px;
-}
 
 .info-row {
     display: flex;
