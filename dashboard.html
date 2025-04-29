@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Gerenciamento de Condomínio</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="dashboard-header">
+            <div class="header-content">
+                <div class="logo-header">
+                    <img src="images/logo.svg" alt="Logo Condomínio" class="header-logo">
+                    <h1>Painel do Morador</h1>
+                </div>
+                <div class="header-actions">
+                    <button id="notification-btn" class="icon-button" aria-label="Notificações">
+                        <span class="notification-icon">🔔</span>
+                        <span class="notification-badge">0</span>
+                    </button>
+                    <button id="theme-toggle" class="icon-button" aria-label="Alternar tema">
+                        <span id="theme-icon">🌙</span>
+                    </button>
+                    <button id="logout-button" class="secondary-button">Sair</button>
+                </div>
+            </div>
+        </header>
+        
+        <div class="welcome-banner">
+            <div class="welcome-text">
+                <h2 id="welcome-name">Bem-vindo(a), ...</h2>
+                <p id="welcome-rent">Aluguel: R$ 0,00</p>
+            </div>
+            <div class="profile-section">
+                <div class="profile-avatar">
+                    <span>JS</span>
+                </div>
+                <p id="account-since">Morador desde: ...</p>
+            </div>
+        </div>
+        
+        <section class="info-section">
+            <h2 class="section-title">Informações do Imóvel</h2>
+            
+            <div class="info-row">
+                <div class="info-block financial-status">
+                    <h3>Situação Financeira</h3>
+                    <div class="info-content">
+                        <div id="rent-status" class="status-item">
+                            <span class="label">Aluguel:</span>
+                            <span class="status-badge">Carregando...</span>
+                        </div>
+                        <div id="condominium-status" class="status-item">
+                            <span class="label">Condomínio:</span>
+                            <span class="status-badge">Carregando...</span>
+                        </div>
+                        <div id="next-payment" class="info-item">
+                            <span class="label">Próximo vencimento:</span>
+                            <span class="value">Dia 10</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="info-block condominium-info">
+                    <h3>Dados do Condomínio</h3>
+                    <div class="info-content">
+                        <div class="info-item">
+                            <span class="label">Nome:</span>
+                            <span class="value">Residencial Jardim das Flores</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Endereço:</span>
+                            <span class="value">Av. Principal, 123</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Administradora:</span>
+                            <span class="value">Gestão Condominial Ltda.</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="label">Contato:</span>
+                            <span class="value">(11) 3456-7890</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="info-block condominium-details">
+                <h3>Detalhes do Condomínio</h3>
+                <div class="info-content">
+                    <div class="info-item">
+                        <span class="label">Valor:</span>
+                        <span class="value">R$ 350,00</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Vencimento:</span>
+                        <span class="value">Dia 10 de cada mês</span>
+                    </div>
+                    <div class="discount-section">
+                        <h4>Desconto Aplicado</h4>
+                        <p id="discount-text" class="discount-value">Carregando informações de desconto...</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="action-buttons">
+                <button class="primary-button" id="download-boleto">
+                    <span class="button-icon">📄</span> Gerar Boleto
+                </button>
+                <button class="secondary-button" id="report-issue">
+                    <span class="button-icon">🔧</span> Relatar Problema
+                </button>
+            </div>
+        </section>
+    </div>
+
+    <script src="scripts/dashboard.js"></script>
+</body>
+</html>

@@ -3,114 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gerenciamento de Condomínio</title>
+    <title>Login - Gerenciamento de Condomínio</title>
     <link rel="stylesheet" href="css/style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 </head>
 <body>
     <div class="container">
-        <!-- Tela de Login -->
-        <div id="login-screen" class="screen active">
-            <div class="login-container">
+        <div class="login-container">
+            <div class="logo-container">
+                <img src="images/logo.svg" alt="Logo Condomínio" class="logo">
                 <h1>Condomínio Residencial</h1>
-                <div class="login-form">
-                    <h2>Acesso ao Sistema</h2>
-                    <div class="input-group">
-                        <label for="email">E-mail</label>
-                        <input type="email" id="email" placeholder="seu@email.com">
+            </div>
+            <div class="login-form">
+                <h2>Acesso ao Sistema</h2>
+                <div id="login-error" class="error-message hidden"></div>
+                <div class="input-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" placeholder="seu@email.com">
+                </div>
+                <div class="input-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" placeholder="••••••••">
+                    <button type="button" id="toggle-password" class="toggle-password" aria-label="Mostrar senha">
+                        <span class="icon">👁️</span>
+                    </button>
+                </div>
+                <button id="login-button" class="primary-button">Entrar</button>
+                <div class="login-options">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">Lembrar de mim</label>
                     </div>
-                    <div class="input-group">
-                        <label for="password">Senha</label>
-                        <input type="password" id="password" placeholder="••••••••">
-                    </div>
-                    <button id="login-button" class="primary-button">Entrar</button>
-                    <p class="help-text">Este é um sistema demonstrativo. Clique em "Entrar" para visualizar o dashboard.</p>
+                    <a href="#" class="forgot-password">Esqueci minha senha</a>
                 </div>
             </div>
-        </div>
-
-        <!-- Dashboard -->
-        <div id="dashboard-screen" class="screen">
-            <header class="dashboard-header">
-                <div class="header-content">
-                    <h1>Painel do Morador</h1>
-                    <div class="header-actions">
-                        <button id="theme-toggle" class="icon-button">
-                            <span id="theme-icon">🌙</span>
-                        </button>
-                        <button id="logout-button" class="secondary-button">Sair</button>
-                    </div>
-                </div>
-            </header>
-            
-            <div class="welcome-banner">
-                <div class="welcome-text">
-                    <h2 id="welcome-name">Bem-vindo(a), ...</h2>
-                    <p id="welcome-rent">Aluguel: R$ 0,00</p>
-                </div>
+            <div class="login-footer">
+                <p>© 2025 Condomínio Residencial - Todos os direitos reservados</p>
             </div>
-            
-            <section class="info-section">
-                <h2 class="section-title">Cartões de informações:</h2>
-                
-                <div class="info-row">
-                    <div class="info-block financial-status">
-                        <h3>Situação Financeira</h3>
-                        <div class="info-content">
-                            <div id="rent-status" class="status-item">
-                                <span class="label">Aluguel:</span>
-                                <span class="status-badge">Carregando...</span>
-                            </div>
-                            <div id="condominium-status" class="status-item">
-                                <span class="label">Condomínio:</span>
-                                <span class="status-badge">Carregando...</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="info-block condominium-info">
-                        <h3>Dados do Condomínio</h3>
-                        <div class="info-content">
-                            <div class="info-item">
-                                <span class="label">Nome:</span>
-                                <span class="value">Residencial Jardim das Flores</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="label">Endereço:</span>
-                                <span class="value">Av. Principal, 123</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="label">Administradora:</span>
-                                <span class="value">Gestão Condominial Ltda.</span>
-                            </div>
-                            <div class="info-item">
-                                <span class="label">Contato:</span>
-                                <span class="value">(11) 3456-7890</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="info-block condominium-details">
-                    <h3>Detalhes do Condomínio</h3>
-                    <div class="info-content">
-                        <div class="info-item">
-                            <span class="label">Valor:</span>
-                            <span class="value">R$ 350,00</span>
-                        </div>
-                        <div class="info-item">
-                            <span class="label">Vencimento:</span>
-                            <span class="value">Dia 10 de cada mês</span>
-                        </div>
-                        <div class="discount-section">
-                            <h4>Desconto Aplicado</h4>
-                            <p id="discount-text" class="discount-value">Carregando informações de desconto...</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
     </div>
 
-    <script src="scripts/main.js"></script>
+    <script src="scripts/auth.js"></script>
 </body>
 </html>
