@@ -1,6 +1,6 @@
 // Configuração simulada do Supabase
-const SUPABASE_URL = 'https://exemplo-supabase.supabase.co';
-const SUPABASE_KEY = 'chave-api-simulada-123456789';
+const SUPABASE_URL = 'https://hwkzksxqxnbqjfeenvbp.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh3a3prc3hxeG5icWpmZWVudmJwIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDU5NDY4NDQsImV4cCI6MjA2MTUyMjg0NH0.oFlDCK6Xy0KtC8ti_-xV1NZUGvT7IlzEaNxIDS9cbUk';
 
 // Valores base
 const RENT_VALUE = 1200.00;
