@@ -31,7 +31,6 @@ const welcomeName = document.getElementById('welcome-name');
 const welcomeRent = document.getElementById('welcome-rent');
 const condominiumStatus = document.getElementById('condominium-status');
 const rentStatus = document.getElementById('rent-status');
-const condominiumPaymentStatus = document.getElementById('condominium-payment-status');
 const discountText = document.getElementById('discount-text');
 
 // Função para alternar o tema
@@ -103,7 +102,6 @@ function updateDashboard(userData) {
     // Atualizar status de pagamentos
     updatePaymentStatus(condominiumStatus, userData.pendencia_condominio);
     updatePaymentStatus(rentStatus, userData.pendencia_aluguel);
-    updatePaymentStatus(condominiumPaymentStatus, userData.pendencia_condominio);
     
     // Atualizar informações de desconto
     updateDiscountInfo(userData.desconto, userData.pendencia_aluguel);
